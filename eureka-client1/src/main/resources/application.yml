@@ -1,0 +1,25 @@
+server:
+  port: 7002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+spring:
+  application:
+    name: eureka-client1
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:frogtech
+    username: hr
+    password: hr
+  jpa:
+    show-sql: true
+
+info:
+  app:
+    name: eureka-client1
