@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 import javax.swing.*;
 
@@ -19,6 +20,7 @@ import javax.swing.*;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+@EnableFeignClients(basePackages = {"com.daishuai.common.feign"})
 public class EurekaClient2Application {
 
     public static void main(String[] args) {

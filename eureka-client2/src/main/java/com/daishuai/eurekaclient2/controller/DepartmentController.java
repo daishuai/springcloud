@@ -1,6 +1,7 @@
 package com.daishuai.eurekaclient2.controller;
 
 import com.daishuai.common.entity.Department;
+import com.daishuai.common.feign.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,9 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class DepartmentController {
 
+    @Autowired
+    private DeptClientService service;
+
     private static final String PREFIX_URL = "http://localhost:7002/";
 
     @Autowired
@@ -24,6 +28,7 @@ public class DepartmentController {
 
     @RequestMapping("/dept/{id}")
     public Department get(@PathVariable("id") Integer id){
-        return restTemplate.getForObject(PREFIX_URL+"/get/"+id, Department.class);
+        //return restTemplate.getForObject(PREFIX_URL+"/get/"+id, Department.class);
+        return service.get(id);
     }
 }
