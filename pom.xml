@@ -14,6 +14,10 @@
         <module>eureka-client1</module>
         <module>eureka-client2</module>
         <module>public-vo</module>
+        <module>hystrix-dashboard</module>
+        <module>eureka-zuul</module>
+        <module>eureka-server2</module>
+        <module>config-server</module>
     </modules>
 
     <parent>
@@ -71,6 +75,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 没有该配置，devtools 不生效 -->
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>

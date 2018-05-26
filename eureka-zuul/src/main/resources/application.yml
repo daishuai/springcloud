@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:8001/eureka,http://eureka2.com:8002/eureka
+spring:
+  application:
+    name: eureka-zuul
+server:
+  port: 9001
+zuul:
+  routes:
+    client1.serviceId: eureka-client1
+    client1.path: /client1/** #代理服务名
+  ignored-services: "*" #对外隐藏真实的服务名，"*"表示隐藏所有服务名
+
+
+

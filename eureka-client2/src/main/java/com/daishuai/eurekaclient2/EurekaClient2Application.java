@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.ComponentScan;
 
 import javax.swing.*;
 
@@ -21,6 +23,8 @@ import javax.swing.*;
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @EnableFeignClients(basePackages = {"com.daishuai.common.feign"})
+@EnableHystrix
+@ComponentScan(basePackages = {"com.daishuai.common","com.daishuai.eurekaclient2"})
 public class EurekaClient2Application {
 
     public static void main(String[] args) {
