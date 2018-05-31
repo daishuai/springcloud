@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: hystrix-turbine
+server:
+  port: 6001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:8001/eureka
+
+
+turbine:
+  aggregator:
+    clusterConfig: EUREKA-CLIENT2 #坑必须使用 clusterConfig，不能使用cluster-config
+  app-config: eureka-client2
+  #cluster-name-expression: metadata['cluster']
+  #clusterNameExpression: new String("default") #指定集群名称
+  #cluster-name-expression: new String("default") #指定需要收集监控信息的服务名
+  #combine-host-port: true
+  #instanceUrlSuffix:
+  #  EUREKA-CLIENT2: /client/hystrix.stream #坑 使用turbine.aggregator.clusterConfig的值
+
+
+

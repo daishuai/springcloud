@@ -1,12 +1,18 @@
 server:
   port: 7003
+  context-path: /client
+
+
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1.com:8001/eureka,http://eureka2.com:8002/eureka
+      defaultZone: http://eureka1.com:8001/eureka
   instance:
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     prefer-ip-address: true
+    home-page-url-path: /client
+    metadata-map:
+      management.port: 8061
 spring:
   application:
     name: eureka-client2
@@ -18,3 +24,5 @@ feign:
 info:
   app:
     name: eureka-client2
+management:
+  port: 8061  #
