@@ -3,6 +3,7 @@ package com.daishuai.springcloud.controller;
 import com.daishuai.common.entity.ResponseVo;
 import com.daishuai.springcloud.service.RefactorDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class RefactorController {
     private RefactorDeptService service;
 
     @RequestMapping("/get/{id}")
-    public ResponseVo getDept(Integer id){
+    public ResponseVo getDept(@PathVariable("id")Integer id){
         return service.get(id);
     }
 

@@ -16,3 +16,25 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:frogtech
     username: hr
     password: hr
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+eureka-client1: #！！！！！！！！！此处服务名必须要与@FeignClient()注解中指定的服务名大小写一致
+  ribbon:
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 2
+    ReadTimeout: 2000
+    ConnectTimeout: 500
+    OkToRetryOnAllOperations: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+feign:
+  hystrix:
+    enabled: true

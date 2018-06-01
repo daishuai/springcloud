@@ -5,6 +5,7 @@ import com.daishuai.common.entity.ResponseVo;
 import com.daishuai.eurekaclient1.repository.DepartmentRepository;
 import com.daishuai.springcloud.service.ApiDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,7 +22,7 @@ public class RefactorDeptController implements ApiDeptService {
     private DepartmentRepository repository;
 
     @Override
-    public ResponseVo get(Integer id) {
+    public ResponseVo get(@PathVariable("id")Integer id) {
         Department department = repository.findOne(id);
         if(department == null){
             throw new RuntimeException();
