@@ -38,3 +38,7 @@ hystrix:
 feign:
   hystrix:
     enabled: true
+logging:
+  level:
+    com.daishuai.springcloud.service.DeptService: debug
+

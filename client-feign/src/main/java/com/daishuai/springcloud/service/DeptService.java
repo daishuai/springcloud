@@ -1,6 +1,8 @@
 package com.daishuai.springcloud.service;
 
 import com.daishuai.common.entity.ResponseVo;
+import com.daishuai.configuration.FeignConfiguration;
+import com.daishuai.springcloud.service.fallback.DeptServiceFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version: 1.0
  * Copyright: Copyright (c) 2018
  */
-@FeignClient("eureka-client1")
+@FeignClient(value = "eureka-client1",fallback = DeptServiceFallback.class,configuration = FeignConfiguration.class)
 public interface DeptService {
 
     @RequestMapping("/get/{id}")
