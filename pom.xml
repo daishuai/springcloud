@@ -21,6 +21,7 @@
         <module>config-client</module>
         <module>hystrix-turbine</module>
         <module>client-feign</module>
+        <module>feign-api</module>
     </modules>
 
     <parent>
@@ -54,6 +55,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.4.0</version>
         </dependency>
     </dependencies>
 

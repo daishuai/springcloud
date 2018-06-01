@@ -21,7 +21,7 @@ import javax.swing.*;
  */
 @EnableEurekaClient
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @EnableFeignClients(basePackages = {"com.daishuai.common.feign"})
 @EnableHystrix
 @ComponentScan(basePackages = {"com.daishuai.common","com.daishuai.eurekaclient2"})
