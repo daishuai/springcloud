@@ -18,6 +18,11 @@ server:
 management:
   security:
     enabled: false
+
+zuul:
+  filter:
+    root: filter
+    interval: 5
 #zuul:
 #  routes:
 #    service1.serviceId: eureka-client1
