@@ -35,7 +35,7 @@ public class DepartmentController {
     public ResponseVo get(@PathVariable("id") Integer id) throws InterruptedException {
         int sleepTime = new Random().nextInt(3000);
         logger.info("---------->SleepTime:" + sleepTime);
-        Thread.sleep(sleepTime);
+        //Thread.sleep(sleepTime);
         Department department = repository.findOne(id);
         if(department == null){
             throw new RuntimeException();

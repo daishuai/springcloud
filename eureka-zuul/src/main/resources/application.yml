@@ -1,17 +1,31 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1.com:8001/eureka,http://eureka2.com:8002/eureka
+      defaultZone: http://user:password@eureka1.com:8001/eureka
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 spring:
   application:
     name: eureka-zuul
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:frogtech
+    username: hr
+    password: hr
 server:
   port: 9001
-zuul:
-  routes:
-    client1.serviceId: eureka-client1
-    client1.path: /client1/** #代理服务名
-  ignored-services: "*" #对外隐藏真实的服务名，"*"表示隐藏所有服务名
+management:
+  security:
+    enabled: false
+#zuul:
+#  routes:
+#    service1.serviceId: eureka-client1
+#    service1.path: /client1/** #代理服务名
+#    service2.serviceId: client-feign
+#    service2.path: /feign/**
+
+#  ignored-services: "*" #对外隐藏真实的服务名，"*"表示隐藏所有服务名
 
 
 

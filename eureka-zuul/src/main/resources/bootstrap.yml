@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      name: eureka-zuul
+      uri:  http://config-server.com:9002
