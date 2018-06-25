@@ -29,7 +29,7 @@ public class DepartmentController {
 
     @RequestMapping("/dept/{id}")
     public ResponseVo get(@PathVariable("id") Integer id){
-        //return restTemplate.getForObject(PREFIX_URL+"/get/"+id, Department.class);
+        //return restTemplate.getForObject(PREFIX_URL+"/rabbit/get/"+id, ResponseVo.class);
         return service.get(id);
     }
 }

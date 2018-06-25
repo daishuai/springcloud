@@ -8,7 +8,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,12 +25,17 @@ import java.util.Random;
  * @Version: 1.0
  * Copyright: Copyright (c) 2018
  */
+@RefreshScope
 @RestController
 public class DepartmentController {
 
     private Logger logger = LoggerFactory.getLogger(DepartmentController.class);
     @Autowired
     private DepartmentRepository repository;
+
+    @Value("${hello.name}")
+    private String name;
+
 
     @RequestMapping("/get/{id}")
     //@HystrixCommand(fallbackMethod = "hystrix_get")
@@ -53,5 +60,10 @@ public class DepartmentController {
         dept.setDepartment_id(id);
         dept.setDepartment_name("该id="+id+"的不萌不存在！！");
         return ResponseVo.successResponseVo(dept);
+    }
+
+    @RequestMapping("/test")
+    public String hello(){
+        return this.name;
     }
 }

@@ -6,6 +6,11 @@ spring:
       server:
         git:
           uri: https://github.com/daishuai/springcloud-properties.git
+
 server:
   port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:8001/eureka
 

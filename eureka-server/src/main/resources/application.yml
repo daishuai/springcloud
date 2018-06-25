@@ -1,5 +1,6 @@
 server:
   port: 8001
+
 eureka:
   client:
     service-url:
@@ -11,3 +12,6 @@ eureka:
     hostname: eureka1.com
   server:
     enable-self-preservation: false #自我保护机制
+spring:
+  application:
+    name: eureka-server

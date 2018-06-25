@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: eureka-client1
+  cloud:
+    config:
+      name: eureka-client1
+      uri: http://config-server.com:9002

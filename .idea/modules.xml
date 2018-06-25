@@ -14,7 +14,10 @@
       <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/hystrix-turbine/hystrix-turbine.iml" filepath="$PROJECT_DIR$/hystrix-turbine/hystrix-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/public-vo/public-vo.iml" filepath="$PROJECT_DIR$/public-vo/public-vo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-hello/rabbitmq-hello.iml" filepath="$PROJECT_DIR$/rabbitmq-hello/rabbitmq-hello.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-rabbit/stream-rabbit.iml" filepath="$PROJECT_DIR$/stream-rabbit/stream-rabbit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/zipkin-server/zipkin-server.iml" />
     </modules>
   </component>
 </project>

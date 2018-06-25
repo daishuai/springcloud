@@ -1,6 +1,6 @@
 server:
   port: 7003
-  context-path: /client
+  context-path: /
 
 
 eureka:
@@ -10,18 +10,27 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     prefer-ip-address: true
-    home-page-url-path: /client
+    home-page-url-path: /
     metadata-map:
       management.port: 8061
 spring:
-  application:
-    name: eureka-client2
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:frogtech
     username: hr
     password: hr
+  sleuth:
+    sampler:  #取样器
+      percentage: 1 #PercentageBasedSampler默认，AlwaysSampler
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 1532
+#Http收集
+  zipkin:
+    base-url: http://localhost:9411
 
 feign:
   hystrix:
